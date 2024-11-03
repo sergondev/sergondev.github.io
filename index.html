@@ -14,7 +14,6 @@
             justify-content: space-between;
             align-items: center;
             padding: 10px 20px;
-            position: relative;
         }
         header h1 {
             font-weight: bold;
@@ -26,6 +25,14 @@
             text-decoration: none;
             color: #000;
             font-weight: bold;
+        }
+        .language-switch {
+            margin: 10px 20px;
+            text-align: right;
+        }
+        .language-switch select {
+            padding: 5px;
+            font-size: 16px;
         }
         section {
             padding: 50px 20px;
@@ -82,15 +89,6 @@
             text-align: center;
             padding: 10px 0;
         }
-        .language-switch {
-            position: absolute;
-            top: 10px;
-            right: 20px;
-        }
-        .language-switch select {
-            padding: 5px;
-            font-size: 16px;
-        }
         /* Stilizare pentru opțiunile cu steaguri */
         .flag-icon {
             background-repeat: no-repeat;
@@ -98,10 +96,12 @@
             padding-left: 25px;
         }
         .flag-en {
-            background-image: url('https://www.countryflags.io/gb/flat/24.png');
+            background-image: url('https://flagcdn.com/gb.svg');
+            background-size: 20px 15px;
         }
         .flag-ro {
-            background-image: url('https://www.countryflags.io/ro/flat/24.png');
+            background-image: url('https://flagcdn.com/ro.svg');
+            background-size: 20px 15px;
         }
     </style>
 </head>
@@ -112,13 +112,15 @@
             <a href="#info">INFO</a>
             <a href="#contact">CONTACT</a>
         </nav>
-        <div class="language-switch">
-            <select onchange="switchLanguage(this.value)">
-                <option value="en" class="flag-icon flag-en">English</option>
-                <option value="ro" class="flag-icon flag-ro">Română</option>
-            </select>
-        </div>
     </header>
+
+    <!-- Mutat selectorul de limbă sub header -->
+    <div class="language-switch">
+        <select onchange="switchLanguage(this.value)">
+            <option value="en" class="flag-icon flag-en">English</option>
+            <option value="ro" class="flag-icon flag-ro">Română</option>
+        </select>
+    </div>
 
     <section id="info">
         <h2 data-en="Site Under Construction" data-ro="Site în proces de construcție.">Site Under Construction</h2>
