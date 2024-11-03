@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>SergOnDev</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Bahnschrift, sans-serif;
+        }
+        header {
+            background-color: #87CEFA; /* Albastru deschis senin */
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+        }
+        header h1 {
+            font-weight: bold;
+            font-size: 20px;
+            margin: 0;
+        }
+        nav a {
+            margin-left: 20px;
+            text-decoration: none;
+            color: #000;
+            font-weight: bold;
+        }
+        section {
+            padding: 50px 20px;
+        }
+        #info {
+            text-align: center;
+        }
+        #info h2 {
+            font-size: 24px;
+        }
+        #info p {
+            font-size: 18px;
+        }
+        .loader {
+            border: 16px solid #f3f3f3;
+            border-top: 16px solid #3498db;
+            border-radius: 50%;
+            width: 120px;
+            height: 120px;
+            animation: spin 2s linear infinite;
+            margin: 20px auto;
+        }
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        #contact {
+            text-align: center;
+        }
+        #contact h2 {
+            font-size: 24px;
+        }
+        .social-menu {
+            list-style: none;
+            padding: 0;
+            display: inline-flex;
+        }
+        .social-menu li {
+            margin: 0 10px;
+        }
+        .social-menu a {
+            text-decoration: none;
+            color: #000;
+            font-size: 18px;
+        }
+        .social-menu img {
+            width: 24px;
+            height: 24px;
+            vertical-align: middle;
+            margin-right: 8px;
+        }
+        footer {
+            background-color: #eee;
+            text-align: center;
+            padding: 10px 0;
+        }
+        .language-switch {
+            position: absolute;
+            top: 10px;
+            right: 20px;
+        }
+        .language-switch button {
+            margin-left: 10px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>SergOnDev</h1>
+        <nav>
+            <a href="#info">INFO</a>
+            <a href="#contact">CONTACT</a>
+        </nav>
+        <div class="language-switch">
+            <button onclick="switchLanguage('en')">EN</button>
+            <button onclick="switchLanguage('ro')">RO</button>
+        </div>
+    </header>
+
+    <section id="info">
+        <h2 data-en="Site Under Construction" data-ro="Site în proces de construcție.">Site Under Construction</h2>
+        <div class="loader"></div>
+        <p data-en="Under construction" data-ro="Sub construcție">Under construction</p>
+    </section>
+
+    <section id="contact">
+        <h2 data-en="Contact" data-ro="Contacte">Contact</h2>
+        <ul class="social-menu">
+            <li>
+                <a href="mailto:sergondev@gmail.com">
+                    <img src="https://img.icons8.com/ios-filled/50/000000/email.png" alt="Email">
+                    sergondev@gmail.com
+                </a>
+            </li>
+            <li>
+                <a href="https://github.com/sergondev" target="_blank">
+                    <img src="https://img.icons8.com/ios-glyphs/50/000000/github.png" alt="GitHub">
+                    @sergondev
+                </a>
+            </li>
+            <li>
+                <a href="https://x.com/SergOnDev" target="_blank">
+                    <img src="https://img.icons8.com/ios-filled/50/000000/twitter.png" alt="Twitter">
+                    @SergOnDev
+                </a>
+            </li>
+            <li>
+                <a href="https://t.me/SergOnDEV" target="_blank">
+                    <img src="https://img.icons8.com/ios-filled/50/000000/telegram-app.png" alt="Telegram">
+                    @SergOnDEV
+                </a>
+            </li>
+        </ul>
+    </section>
+
+    <footer>
+        SergOnDev, <span id="current-date"></span> &copy; <span data-en="All rights reserved" data-ro="Toate drepturile rezervate">All rights reserved</span>
+    </footer>
+
+    <script>
+        // Set current date
+        var today = new Date();
+        var date = today.toLocaleDateString();
+        document.getElementById('current-date').innerText = date;
+
+        // Language switcher
+        function switchLanguage(lang) {
+            var elements = document.querySelectorAll('[data-en]');
+            elements.forEach(function(element) {
+                if(lang === 'ro') {
+                    element.innerText = element.getAttribute('data-ro');
+                } else {
+                    element.innerText = element.getAttribute('data-en');
+                }
+            });
+        }
+    </script>
+</body>
+</html>
