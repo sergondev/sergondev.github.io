@@ -14,6 +14,7 @@
             justify-content: space-between;
             align-items: center;
             padding: 10px 20px;
+            position: relative;
         }
         header h1 {
             font-weight: bold;
@@ -86,8 +87,21 @@
             top: 10px;
             right: 20px;
         }
-        .language-switch button {
-            margin-left: 10px;
+        .language-switch select {
+            padding: 5px;
+            font-size: 16px;
+        }
+        /* Stilizare pentru opțiunile cu steaguri */
+        .flag-icon {
+            background-repeat: no-repeat;
+            background-size: 20px 15px;
+            padding-left: 25px;
+        }
+        .flag-en {
+            background-image: url('https://www.countryflags.io/gb/flat/24.png');
+        }
+        .flag-ro {
+            background-image: url('https://www.countryflags.io/ro/flat/24.png');
         }
     </style>
 </head>
@@ -99,15 +113,17 @@
             <a href="#contact">CONTACT</a>
         </nav>
         <div class="language-switch">
-            <button onclick="switchLanguage('en')">EN</button>
-            <button onclick="switchLanguage('ro')">RO</button>
+            <select onchange="switchLanguage(this.value)">
+                <option value="en" class="flag-icon flag-en">English</option>
+                <option value="ro" class="flag-icon flag-ro">Română</option>
+            </select>
         </div>
     </header>
 
     <section id="info">
         <h2 data-en="Site Under Construction" data-ro="Site în proces de construcție.">Site Under Construction</h2>
         <div class="loader"></div>
-        <p data-en="Under construction" data-ro="Sub construcție">Under construction</p>
+        <p data-en="Under construction" data-ro="În construcție">Under construction</p>
     </section>
 
     <section id="contact">
