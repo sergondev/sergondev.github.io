@@ -1,0 +1,88 @@
+body {
+    margin: 0;
+    font-family: Bahnschrift, sans-serif;
+}
+header {
+    background-color: #87CEFA;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+}
+header h1 {
+    font-size: 20px;
+    margin: 0;
+}
+nav a {
+    margin-left: 20px;
+    text-decoration: none;
+    color: #000;
+    font-weight: bold;
+}
+.language-switch {
+    margin: 10px 20px;
+    text-align: right;
+}
+.language-switch select {
+    padding: 5px;
+    font-size: 16px;
+}
+section {
+    padding: 50px 20px;
+}
+#info, #contact {
+    text-align: center;
+}
+h2 {
+    font-size: 24px;
+}
+p {
+    font-size: 18px;
+}
+.loader {
+    border: 16px solid #f3f3f3;
+    border-top: 16px solid #3498db;
+    border-radius: 50%;
+    width: 120px;
+    height: 120px;
+    animation: spin 2s linear infinite;
+    margin: 20px auto;
+}
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+.social-menu {
+    list-style: none;
+    padding: 0;
+    display: inline-flex;
+}
+.social-menu li {
+    margin: 0 10px;
+}
+.social-menu a {
+    text-decoration: none;
+    color: #000;
+    font-size: 18px;
+}
+.social-menu img {
+    width: 24px;
+    height: 24px;
+    margin-right: 8px;
+}
+footer {
+    background-color: #eee;
+    text-align: center;
+    padding: 10px 0;
+}
+.flag-icon {
+    background-repeat: no-repeat;
+    background-size: 20px 15px;
+    padding-left: 25px;
+}
+.flag-en {
+    background-image: url('https://flagcdn.com/gb.svg');
+}
+.flag-ro {
+    background-image: url('https://flagcdn.com/ro.svg');
+}
